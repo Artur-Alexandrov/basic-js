@@ -12,7 +12,22 @@ import { NotImplementedError } from '../extensions/index.js';
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-export default function getSumOfDigits(/* n */) {
-  throw new NotImplementedError('Not implemented');
+export default function sumDigits(x) {
+  
   // remove line with error and write your code here
+  
+
+    let st = x.toString();
+    let arr = st.split("")
+    
+    let count = 0
+    for (let i of arr) {
+        count = count + Number(i)
+    }
+    
+    if (count > 9) {
+        return sumDigits(count)
+    }
+  return count;  
 }
+
