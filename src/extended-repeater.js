@@ -38,10 +38,10 @@ export default function repeater(str, options) {
     let st = ((str + options.addition + options.separator).repeat(options.repeatTimes)).slice(0, -options.separator.length)
     return st
   }
-  console.log(str)
-  console.log(options)
+  
+  
   let arr = Object.keys(options)
-  console.log(arr)
+  
 
   if (arr.length === 5) {
   const L = options.separator.length
