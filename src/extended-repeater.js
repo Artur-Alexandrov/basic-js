@@ -17,23 +17,44 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function repeater(str, options) {
  
-  let arr = Object.keys(options)
+  str = String(str)
+  if(options.addition || typeof options.addition === 'boolean' || options.addition === null) options.addition = String(options.addition)
+
+  if ("separator" in options === false) {
+    options.separator = "+"
+  } 
   
+  if("additionSeparator" in options === false ) {
+
+    options.additionSeparator = "|"
+  }
+  else if ("repeatTimes" in options === false || "additionRepeatTimes" in options === false ) {
+
+    let st = str + options.addition
+    return st
+  }
+
+  if (str === options.addition && str !== "null") {
+    let st = ((str + options.addition + options.separator).repeat(options.repeatTimes)).slice(0, -options.separator.length)
+    return st
+  }
+  console.log(str)
+  console.log(options)
+  let arr = Object.keys(options)
+  console.log(arr)
+
   if (arr.length === 5) {
   const L = options.separator.length
   const L1 = options.additionSeparator.length
   let st = (str + (options.addition + options.additionSeparator).repeat(options.additionRepeatTimes).slice(0, -L1) +  options.separator ).repeat(options.repeatTimes).slice(0, -L);
   return st
 }
-  else if (arr.length === 1) {
-    let st = (str +  "+").repeat(options.repeatTimes).slice(0, -1)
-    return st
-  }
-
-  else if (arr.length === 2) {
+  else if (arr.length === 3) {
     let st = (str + options.separator).repeat(options.repeatTimes).slice(0, -options.separator.length)
     return st
   }
+
+ 
   else if ((arr.length) === 4) {
     const L = options.separator.length
     const L1 = options.addition.length
@@ -47,8 +68,16 @@ export default function repeater(str, options) {
     return st
   }
 
- 
+
   
 }
+
+
+
+
+
+
+  
+
 
 
