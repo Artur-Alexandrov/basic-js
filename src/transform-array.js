@@ -24,6 +24,10 @@ export default function transform(arr) {
     function checker(el, i) {
       if (el === '--double-prev' && i !== 0) {new_arr.splice(i, 1, new_arr[i - 1])}
 
+      else if (el === '--discard-next' && new_arr[i + 2] === '--double-prev') {new_arr.splice(i, 3)}
+
+      else if (el === '--discard-next' && new_arr[i + 2] === '--discard-prev') {new_arr.splice(i, 3)}
+
       else if (el === '--double-next'  && i !== new_arr.length - 1) {new_arr.splice(i, 1, new_arr[i + 1])}
 
       else if (el === '--discard-next' && i !== new_arr.length - 1) {new_arr.splice(i, 2,)}
