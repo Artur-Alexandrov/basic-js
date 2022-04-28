@@ -25,11 +25,7 @@ function deleteDigit(n) {
     
     ); 
   return Math.max(...arr1);
-=======
-function deleteDigit(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
->>>>>>> 35961c4664a5f9ed985ef60ff6b2afabe9e9afc6:src/delete-digit.js
+
 }
 
 module.exports = {

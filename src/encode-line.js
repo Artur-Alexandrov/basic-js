@@ -12,7 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
   
-function encodeLine(str) {
+function encodeLine(s) {
   let x = 1;    
     let res = '';
     for(let i=0; i < s.length; i++){
