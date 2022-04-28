@@ -12,13 +12,18 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default function getSeason(date) {
+
+  
+  
   if (!date) {
     return 'Unable to determine the time of year!'
 }
 
-else if (Object.entries(date.length > 0)) {throw new Error ('Invalid date!')}
 
-else if (!(date instanceof Date && !isNaN(date))) {throw new Error ('Invalid date!')}
+ else if ((date instanceof Date === false || Object.getOwnPropertyNames(date).length > 0) && arguments.length > 0) {
+  throw new Error('Invalid date!');
+}   
+
 
 let d = date.toDateString()
 let arr = d.split(" ")
