@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Given a number, replace this number with
@@ -12,9 +12,8 @@ import { NotImplementedError } from '../extensions/index.js';
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-export default function sumDigits(x) {
   
-  // remove line with error and write your code here
+function getSumOfDigits(n) {
   
 
     let st = x.toString();
@@ -31,3 +30,6 @@ export default function sumDigits(x) {
   return count;  
 }
 
+module.exports = {
+  getSumOfDigits
+};
